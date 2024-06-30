@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
@@ -6,28 +7,53 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
+            var lot = new CarLot();
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
+            var randomCar = new Car();
+            randomCar.Year = 2018;
+            randomCar.Make = "Ford";
+            randomCar.Model = "Focus";
+            randomCar.EngineNoise = "vroom";
+            randomCar.HonkNoise = "meep meep";
+            randomCar.IsDriveable = true;
 
+            randomCar.MakeEngineNoise();
+            randomCar.MakeHonkNoise();
 
-            //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
+            var newCar = new Car()
+            {
+                Year = 2024,
+                Make = "Subaru",
+                Model = "Outback",
+                EngineNoise = "vroom vroom",
+                HonkNoise = "beeeep",
+                IsDriveable = true,
+            };
 
-            //*************BONUS*************//
+            newCar.MakeEngineNoise();
+            newCar.MakeHonkNoise();
 
-            // Set the properties utilizing the 3 different ways we learned about, one way for each car
+            var oldCar = new Car(1998, "Honda", "Civic", "vrooom", "meep", false);
+
+            oldCar.MakeEngineNoise();
+            oldCar.MakeHonkNoise();
+
+            lot.carDataBase.Add(randomCar);
+            lot.carDataBase.Add(newCar);
+            lot.carDataBase.Add(oldCar);
+
+            foreach(var car in lot.carDataBase)
+            {
+                Console.WriteLine($"Year: {car.Year} | Make: {car.Make} | Model: {car.Model}");
+            }
 
             //*************BONUS X 2*************//
 
-            //Create a CarLot class
-            //It should have at least one property: a List of cars
+
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+
         }
     }
 }

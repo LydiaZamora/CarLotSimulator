@@ -28,7 +28,7 @@ namespace CarLotSimulator
             randomCar.MakeEngineNoise();
             randomCar.MakeHonkNoise();
 
-            //use onject initialization syntax
+            //use object initialization syntax
 
             var newCar = new Car()
             {
@@ -66,11 +66,8 @@ namespace CarLotSimulator
                 Console.WriteLine($"Year: {car.Year} | Make: {car.Make} | Model: {car.Model}");
             }
 
-            //*************BONUS X 2*************//
-
-
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            Console.WriteLine($"Number of cars created {CarLot.numberOfCars}");
+            
 
 
         }

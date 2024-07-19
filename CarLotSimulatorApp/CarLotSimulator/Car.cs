@@ -6,8 +6,10 @@ namespace CarLotSimulator
 	
         public Car()
 		{
+            CarLot.numberOfCars++;
 		}
 
+        // created a constructor that can have these arguments passed into it
         public Car(int year,
                    string make,
                    string model,
@@ -25,6 +27,7 @@ namespace CarLotSimulator
 
         }
 
+        // set properties
 
         public int Year { get; set; }
         public string Make { get; set; }
@@ -32,6 +35,8 @@ namespace CarLotSimulator
         public string EngineNoise { get; set; }
         public string HonkNoise { get; set; }
         public bool IsDriveable { get; set; }
+
+        // set methods which call on properties 
 
         public void MakeEngineNoise()
         {
